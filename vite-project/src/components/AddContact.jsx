@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+
 
 function AddContact() {
-    const navigate = useNavigate();
+
     const [contact, setContact] = useState({
         name: '',
         username: '',
@@ -21,7 +21,11 @@ function AddContact() {
 
     const handleSaveContact = () => {
         setContacts([...contacts, contact]);
-        navigate('/contacts');
+        window.location.href = '/contacts';
+    };
+
+    const handleCancel = () => {
+        window.location.href = '/'; // Перенаправити на головну сторінку
     };
 
     return (
@@ -59,7 +63,7 @@ function AddContact() {
                     />
                 </div>
                 <button onClick={handleSaveContact}>Зберегти</button>
-                <Link to="/">Скасувати</Link>
+                <button onClick={handleCancel}>Скасувати</button>
             </form>
         </div>
     );

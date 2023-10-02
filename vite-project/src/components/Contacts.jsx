@@ -1,10 +1,9 @@
-// src/components/Contacts.js
+
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+
 
 function Contacts() {
     const [contacts, setContacts] = useState([]);
-    const location = useLocation();
 
     useEffect(() => {
         if (!contacts.length) {
@@ -23,9 +22,7 @@ function Contacts() {
         <div>
             <h1>Список контактів</h1>
             <table>
-                <thead>
-                {/* Заголовки стовбців таблиці */}
-                </thead>
+
                 <tbody>
                 {contacts.map((contact) => (
                     <tr key={contact.id}>
@@ -46,3 +43,5 @@ function Contacts() {
 }
 
 export default Contacts;
+
+
